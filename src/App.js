@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import './index.css';
 
 function App() {
-  const [data, setData] = useState('');
-  const [company, setCompany] = useState('');
+  const [data, setData] = useState("");
+  const [company, setCompany] = useState("");
 
   let handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,9 +16,9 @@ function App() {
       });
       let resJson = await res.json();
       if (res.status === 200) {
-        console.log(res.body)
+        console.log(res.body);
         setCompany("");
-        setData(resJson.text)
+        setData(resJson.text);
       } else {
         setData("Some error occured");
       }
@@ -27,7 +28,7 @@ function App() {
   };
 
   return (
-    <div className='main'>
+    <div className="main">
       <h3>Pitch my startup</h3>
       <form onSubmit={handleSubmit}>
         <input
@@ -39,7 +40,13 @@ function App() {
 
         <button type="submit">Generate Pitch</button>
       </form>
-      <div className="data">{data ? <div className='result'><p>{data}</p></div> : null}</div>
+      <div className="data">
+        {data ? (
+          <div className="result">
+            <p>{data}</p>
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 }
