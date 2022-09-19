@@ -18,7 +18,7 @@ module.exports = async function (context, req) {
 
   function generatePrompt(company) {
     return `Create a startup pitch.
-        Name and industry: ${company}
+        Startup name and industry: ${company}
         Pitch:`;
   }
 };

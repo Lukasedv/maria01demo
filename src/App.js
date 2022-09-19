@@ -34,7 +34,7 @@ function App() {
         <input
           type="text"
           value={company}
-          placeholder="Company name, Industry"
+          placeholder="Startup name, Industry"
           onChange={(e) => setCompany(e.target.value)}
         />
 
