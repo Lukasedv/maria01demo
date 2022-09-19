@@ -27,19 +27,19 @@ function App() {
   };
 
   return (
-    <div>
-            <form onSubmit={handleSubmit}>
+    <div className='main'>
+      <h3>Pitch my startup</h3>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={company}
-          placeholder="Name"
+          placeholder="Company name, Industry"
           onChange={(e) => setCompany(e.target.value)}
         />
 
-        <button type="submit">Create</button>
-
-        <div className="data">{data ? <p>{data}</p> : null}</div>
+        <button type="submit">Generate Pitch</button>
       </form>
+      <div className="data">{data ? <div className='result'><p>{data}</p></div> : null}</div>
     </div>
   );
 }
