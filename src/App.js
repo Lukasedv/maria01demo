@@ -7,6 +7,7 @@ function App() {
 
   let handleSubmit = async (e) => {
     e.preventDefault();
+    setData("Loading...");
     try {
       let res = await fetch("/api/message", {
         method: "POST",
@@ -38,7 +39,7 @@ function App() {
           onChange={(e) => setCompany(e.target.value)}
         />
 
-        <button type="submit">Generate Pitch</button>
+        <button type="submit">Generate Pitch!</button>
       </form>
       <div className="data">
         {data ? (
